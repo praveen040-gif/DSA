@@ -12,3 +12,6 @@ print(s)
 
 print(s[1]) #----> output 5
 
+
+
+

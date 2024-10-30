@@ -10,7 +10,7 @@ print(s)
 
 # output:Counter({2: 8, 1: 5, 3: 2, 0: 1})
 
-print(s[1]) #----> output 5
+print(s[2]) #----> output 5
 
 
 

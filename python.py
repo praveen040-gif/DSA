@@ -12,17 +12,24 @@
 
 # print(s[2]) #----> output 5
 
-n=5
-l=[]
-for i in range(n):
-    l.append('.'*n)
+# n=5
+# l=[]
+# for i in range(n):
+#     l.append('.'*n)
+# # print(l)
+# l[0]=l[0][:3]+'Q'+l[0][4:n]
 # print(l)
-l[0]=l[0][:3]+'Q'+l[0][4:n]
-print(l)
-if str(5)=='5':
-    print("yes")
-else:
-    print("no")
+# if str(5)=='5':
+#     print("yes")
+# else:
+#     print("no")
+
+# s=""
+# for i in range(1,4):
+#     s=s+str(i)
+# print(s)
+l=['1','2','3']
+print("".join(l))
 
     
 

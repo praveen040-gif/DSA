@@ -48,56 +48,9 @@
 # l=[0]*5
 # print(l)
 # Python implementation of above approach
-from collections import defaultdict
 
-# Function for calculating 
-# minimum operations
-def minimum_operations(arr):
-	
-	# Declare defaultdict for storing the 
-	# index of each element
-	mpp = defaultdict(list)
-	
-	for i, x in enumerate(arr):
-		mpp[x].append(i)
-
-	# Declare a queue which stores the count 
-	# of previously non-zero elements
-	q = []
-	st = set()
-
-	# Count the total operations
-	count = 0
-	for i in range(len(arr) - 1):
-		if arr[i] not in st and arr[i] != 0:
-			q.append(arr[i])
-			st.add(arr[i])
-
-		# If found the violating condition
-		if arr[i] > arr[i + 1]:
-			
-			# Increase the count by the 
-			# previously non-zero elements
-			count += len(q)
-			while q:
-				top = q.pop(0)
-				if top in mpp:
-					
-					# Set all occurrences of previously 
-					# assigned zero elements to zero
-					for idx in mpp[top]:
-						arr[idx] = 0
-						
-	# Returning the count
-	return count
-
-# Driver code
-
-arr = [3,3,2]
-# Function call
-print(minimum_operations(arr))
-
-# This Code is Contributed by Prasad Kandekar(prasad264)
+import math
+print(math.ceil(15/4))
 
 
 

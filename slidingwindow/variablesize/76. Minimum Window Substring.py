@@ -31,4 +31,4 @@ def minWindow(self, s: str, t: str) -> str:
                     count+=1
             left=left+1
         right+=1
-    return ans1
+    return ans

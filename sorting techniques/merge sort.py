@@ -23,6 +23,8 @@ def mergesort(low,high,arr):
         mergesort(low,mid,arr)
         mergesort(mid+1,high,arr)
         merge(low,mid,high,arr)
+
 arr=list(map(int,input().split()))
 mergesort(0,len(arr)-1,arr)
 print(arr)
+

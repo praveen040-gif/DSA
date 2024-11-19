@@ -3,7 +3,7 @@ def qpivot(low,high,arr):
     i=low
     j=high-1
     while i<j:
-        while arr[i]<=arr[pivot] and i<=high-1:
+        while arr[i]<=arr[pivot] and i<high-1:
             i+=1
         while arr[j]>arr[pivot] and j>=low:
             j-=1

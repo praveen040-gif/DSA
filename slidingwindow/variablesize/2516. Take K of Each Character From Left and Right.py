@@ -19,7 +19,7 @@ def takeCharacters(self, s: str, k: int) -> int:
     min1=float('inf')
     while right<n:
         hashmap[s[right]]-=1
-        print(hashmap)
+        # print(hashmap)
         while min(hashmap.values())<k:
             hashmap[s[left]]+=1
             left+=1

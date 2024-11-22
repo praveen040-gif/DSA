@@ -49,8 +49,22 @@
 # print(l)
 # Python implementation of above approach
 
-import math
-print(math.ceil(15/4))
+# import math
+# print(math.ceil(15/4))
+
+d={'a':4,'b':2}
+k=dict(sorted(d.items(),key=lambda x:x[1]))
+print(k)
+
+l=[1,1,1,0]
+print(l.count(1),l.count(0))
+import copy
+l=[[1,2,3],[4,5,6]]
+ans=copy.deepcopy(l)
+ans[0][0]=5
+print(ans)
+print(l)
+
 
 
 

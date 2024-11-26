@@ -53,7 +53,7 @@
 # print(math.ceil(15/4))
 
 d={'a':4,'b':2}
-k=dict(sorted(d.items(),key=lambda x:x[1]))
+k=dict(sorted(d.items(),key=lambda x:x[1],reverse=True))
 print(k)
 
 l=[1,1,1,0]

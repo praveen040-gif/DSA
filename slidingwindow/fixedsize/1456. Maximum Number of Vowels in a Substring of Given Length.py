@@ -1,17 +1,21 @@
-def maxVowels(self, s: str, k: int) -> int:
-    n=len(s)
-    right=0
-    left=0
-    v="aeiou"
-    max1=0
-    count=0
-    while right<n:
-        if s[right] in v:
-            count=count+1
-        right=right+1
-        if right-left==k:
-            max1=max(max1,count)
-            if s[left] in v:
-                count-=1
-            left+=1
-    return max1
+# 
+class Solution:
+    def maxVowels(self, s: str, k: int) -> int:
+        n=len(s)
+        left=0
+        right=0
+        c=0
+        s1="aeiou"
+        max1=0
+        while right<n:
+            if s[right] in s1:
+                c+=1
+            if right-left+1==k:
+                max1=max(max1,c)
+                if s[left] in s1:
+                    c-=1
+                left+=1
+            right+=1
+        return max1
+
+        

@@ -52,18 +52,22 @@
 # import math
 # print(math.ceil(15/4))
 
-d={'a':4,'b':2}
-k=dict(sorted(d.items(),key=lambda x:x[1],reverse=True))
-print(k)
+# d={'a':4,'b':2}
+# k=dict(sorted(d.items(),key=lambda x:x[1],reverse=True))
+# print(k)
 
-l=[1,1,1,0]
-print(l.count(1),l.count(0))
-import copy
-l=[[1,2,3],[4,5,6]]
-ans=copy.deepcopy(l)
-ans[0][0]=5
-print(ans)
-print(l)
+# l=[1,1,1,0]
+# print(l.count(1),l.count(0))
+# import copy
+# l=[[1,2,3],[4,5,6]]
+# ans=copy.deepcopy(l)
+# ans[0][0]=5
+# print(ans)
+# print(l)
+d1={'a':1,'b':1,'c':1}
+d2={'c':1,'b':1,'a':1}
+if d1==d2:
+    print("yes")
 
 
 

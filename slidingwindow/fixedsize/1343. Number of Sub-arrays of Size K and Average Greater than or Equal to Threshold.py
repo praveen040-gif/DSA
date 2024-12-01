@@ -29,5 +29,4 @@ class Solution:
                 sum1-=arr[left]
                 left+=1
             right+=1
-        return c
-        
+        return c  

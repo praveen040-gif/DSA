@@ -67,7 +67,7 @@
 d1={'a':1,'b':1,'c':1}
 d2={'c':1,'b':1,'a':1}
 if d1==d2:
-    print("yes")
+    print(d1.items())
 
 
 

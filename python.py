@@ -64,10 +64,21 @@
 # ans[0][0]=5
 # print(ans)
 # print(l)
-d1={'a':1,'b':1,'c':1}
-d2={'c':1,'b':1,'a':1}
-if d1==d2:
-    print(d1.items())
+# d1={'a':1,'b':1,'c':1}
+# d2={'c':1,'b':1,'a':1}
+# if d1==d2:
+#     print(d1.items())
+s=set()
+for i in range(5):
+    s.add((i,i+1))
+print(list(s))
+l=[[1,2,3],[3,2,1]]
+k=[]
+for i in l:
+    if i not in k:
+        k.append(i)
+print(k)
+
 
 
 

@@ -1,42 +1,62 @@
-def maxConsecutiveAnswers(answerKey,K):
-    def maxt(answerKey, k):
-        n=len(answerKey)
-        right=0
-        left=0
-        f=0
-        max1=float('-inf')
-        while right<n:
-            if answerKey[right]=='F':
-                f=f+1
-            while f>k:
-                max1=max(max1,right-left)
-                if answerKey[left]=='F':
-                    f=f-1
-                left=left+1
-            max1=max(max1,right-left+1)
-            right=right+1
-        return max1
-    def maxf(answerKey, k):
-        n=len(answerKey)
-        right=0
-        left=0
-        max1=float('-inf')
-        f=0
-        while right<n:
-            if answerKey[right]=='T':
-                f=f+1
-            while f>k:
-                max1=max(max1,right-left)
-                if answerKey[left]=='T':
-                    f=f-1
-                left=left+1
-            max1=max(max1,right-left+1)
-            right=right+1
-        return max1
-    a=maxt(answerKey,k)
-    b=maxf(answerKey,k)
-    return max(a,b)
-nums=list(map(int,input().split()))
-k=int(input())
-ans=maxConsecutiveAnswers(nums,k)
-print(ans)
+# A teacher is writing a test with n true/false questions, with 'T' denoting true and 'F' denoting false. He wants to confuse the students by maximizing the number of consecutive questions with the same answer (multiple trues or multiple falses in a row).
+
+# You are given a string answerKey, where answerKey[i] is the original answer to the ith question. In addition, you are given an integer k, the maximum number of times you may perform the following operation:
+
+# Change the answer key for any question to 'T' or 'F' (i.e., set answerKey[i] to 'T' or 'F').
+# Return the maximum number of consecutive 'T's or 'F's in the answer key after performing the operation at most k times.
+
+ 
+
+# Example 1:
+
+# Input: answerKey = "TTFF", k = 2
+# Output: 4
+# Explanation: We can replace both the 'F's with 'T's to make answerKey = "TTTT".
+# There are four consecutive 'T's.
+# Example 2:
+
+# Input: answerKey = "TFFT", k = 1
+# Output: 3
+# Explanation: We can replace the first 'T' with an 'F' to make answerKey = "FFFT".
+# Alternatively, we can replace the second 'T' with an 'F' to make answerKey = "TFFF".
+# In both cases, there are three consecutive 'F's.
+# Example 3:
+
+# Input: answerKey = "TTFTTFTT", k = 1
+# Output: 5
+# Explanation: We can replace the first 'F' to make answerKey = "TTTTTFTT"
+# Alternatively, we can replace the second 'F' to make answerKey = "TTFTTTTT". 
+# In both cases, there are five consecutive 'T's.
+class Solution:
+    def maxConsecutiveAnswers(self, nums: str, k: int) -> int:
+        def ispossible(limit):
+            right=0
+            n=len(nums)
+            left=0
+            t=0
+            f=0
+            while right<n:
+                if nums[right]=='T':
+                    t+=1
+                else:
+                    f+=1
+                if right-left+1==limit:
+                    if (t+k>=right-left+1) or (f+k>=right-left+1):
+                        return True
+                    if nums[left]=='T':
+                        t-=1
+                    else:
+                        f-=1
+                    left+=1
+                right+=1
+            return False
+        low=1
+        high=len(nums)
+        while low<=high:
+            mid=(low+high)//2
+            if ispossible(mid):
+                low=mid+1
+            else:
+                high=mid-1
+        return high
+        

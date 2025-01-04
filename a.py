@@ -1,2 +1,3 @@
-import math
-print(math.ceil(1.7))
+l=[1,2,3,4,5]
+l=l[0:2:-1]
+print(l)

@@ -1,18 +1,41 @@
-def generate(self, numRows: int) -> List[List[int]]:
-    def pascal(n):
-        fin=1
-        l=[]
-        l.append(fin)
-        num=1
-        den=1
-        for i in range(n):
-            num=num*(n-i)
-            den=den*(i+1)
-            fin=num//den
+# Given an integer numRows, return the first numRows of Pascal's triangle.
+
+# In Pascal's triangle, each number is the sum of the two numbers directly above it as shown:
+
+
+ 
+
+# Example 1:
+
+# Input: numRows = 5
+# Output: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
+# Example 2:
+
+# Input: numRows = 1
+# Output: [[1]]
+ 
+
+# Constraints:
+
+# 1 <= numRows <= 30
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        def pascal(n):
+            fin=1
+            l=[]
             l.append(fin)
-        return l
-    res=[]
-    for i in range(numRows):
-        ans=pascal(i)
-        res.append(ans)
-    return res
+            num,den=n,n
+            for i in range(1,n):
+                num=num*(n-i)
+                den=den*i
+                fin=num//den
+                l.append(fin)
+            return l
+        res=[]
+        for i in range(1,numRows+1):
+            ans=pascal(i)
+            res.append(ans)
+        return res
+            
+
+        
